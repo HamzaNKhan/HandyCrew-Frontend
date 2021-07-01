@@ -1,0 +1,120 @@
+ <!-- Header Area wrapper Starts -->
+<!--  
+ <div *ngIf="showComponent; else other">
+    <router-outlet></router-outlet>
+</div>
+ <ng-template #other> -->
+
+
+ <header id="header-wrap">
+        <!-- Navbar Start -->
+        <section>
+        <nav class="navbar navbar-expand-md bg-inverse fixed-top scrolling-navbar" style="background-color: #eef0ee;">
+          <div class="container-fluid">
+            
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <a href="index.html" class="navbar-brand"><img src="assets/img/HandyCrew.png" alt="" height="100"></a>       
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+              <i class="lni-menu"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+              <ul class="navbar-nav mr-auto w-100 justify-content-end clearfix">
+                <li class="nav-item active">
+                  <a class="nav-link" routerLink="home">
+                    Home
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" routerLink="about">
+                    About
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" routerLink="contact">
+                    Contact
+                  </a>
+                </li>
+           
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Looking for work?
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" [routerLink]="['/signup']" routerLinkActive="router-link-active" >Add yourself as a worker </a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        </section>
+      </header>
+
+        <!-- Navbar End -->
+        
+          <router-outlet></router-outlet>
+        
+      <section>
+        <!-- Footer Section Start -->
+        <footer id="footer"  style="background-color: lightgray; padding-top: 20px;">
+          <div class="container">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 col-mb-12">
+                  <div class="widget">
+                    <h3 class="footer-logo"><img src="assets/img/HandyCrew.png" alt="" width="150"></h3>
+                    <div class="textwidget">
+                      <p>Handy Crew bridge provide jobs to workers such as drivers, electricians, and plumbers.</p>
+                    </div>
+                  
+                  </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                  <h3 class="footer-titel">About Us</h3>
+                  <ul class="footer-link">
+                    <li><a routerLink="about">About Handy Crew</a></li>
+                    <li><a routerLink="contact">Contact Us</a></li>
+                          
+                  </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                  <h3 class="footer-titel">Contribute</h3>
+                  <ul class="footer-link">
+                    <li><a [routerLink]="['/signup']" routerLinkActive="router-link-active" >Add a Worker</a></li>
+                    <li><a href="#">Community</a></li>
+                    <li><a href="#">Support</a></li>
+                  </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                  <h3 class="footer-titel">Connect</h3>
+                  <ul class="address">
+                    <li>
+                        <a href="https://www.facebook.com/" target="_blank" class="fa fa-facebook"></a>
+                        <a href="https://www.twitter.com/" class="fa fa-twitter"></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>  
+          </div> 
+          <div id="copyright">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="copyright-content">
+                    <p>Copyright © 2020 <a rel="nofollow" >Handy Crew</a> All Right Reserved</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>   
+        </footer> 
+        <!-- Footer Section End -->
+       
+           </section>
+           <section>
+             
+           </section>
+       
+
+<!-- </ng-template> -->

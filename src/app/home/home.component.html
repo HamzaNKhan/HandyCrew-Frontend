@@ -1,0 +1,184 @@
+<section >
+    <div id="hero-area" class="hero-area-bg">
+     <div class="container">      
+       <div class="row">
+         <div class="col-lg-7 col-md-12 col-sm-12 col-xs-12">
+           <div class="contents">
+             <h2 class="head-title">Work. Done.</h2>
+             <p>Connecting you to over {{ count }} professionals around the world!</p>
+             <div class="header-button">
+              
+                   <div class="input-group md-form form-sm form-1 pl-0">
+                     <div class="input-group-prepend">
+                      <img src="assets/img/searchbox.svg" class="mt-2 mr-1" alt="" width="30" height="30">
+                     </div>
+                     <!-- <input class="form-control my-0 py-1 ml-3" type="text" placeholder="I'm looking for..." aria-label="Search"> -->
+                     <!-- AUTO COMPLETE SEARCHBOX -->
+                     <div class="ng-autocomplete" >
+                        <ng-autocomplete 
+                        [data]="skillSearch" 
+                        [searchKeyword]="keyword" 
+                        (selected)='selectEvent($event)'
+                        (inputChanged)='onChangeSearch($event)' 
+                        (inputFocused)='onFocused($event)' 
+                        [itemTemplate]="itemTemplate"
+                        [notFoundTemplate]="notFoundTemplate"
+                        placeHolder= "Search Skills">
+                        </ng-autocomplete>
+                  
+                      <ng-template #itemTemplate let-item >
+                          <a [innerHTML]="item.skillName" [routerLink]="['/window', item._id]"
+                          routerLinkActive="router-link-active"
+                          ></a>
+                      </ng-template>
+                  
+                      <ng-template #notFoundTemplate let-notFound>
+                          <div [innerHTML]="notFound"></div>
+                      </ng-template>
+                  </div>
+                  <!-- \\\\\\\\\\\ -->
+                    </div>
+             </div>
+           </div>
+         </div>
+         <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12">
+           <div class="intro-img">
+             <img class="img-fluid" src="assets/img/intro-mobile.png" alt="">
+           </div>            
+         </div>
+       </div> 
+     </div> 
+   </div>
+    </section>
+   <!-- Hero Area End -->
+ <section >
+ <!-- Services Section Start -->
+ <section id="services" class="section-padding">
+  <div class="container" >
+    <div class="section-header text-center" >
+      
+      <h2 class="section-title wow fadeInDown" data-wow-delay="0.3s">How We Work</h2>
+      <div class="shape wow fadeInDown" data-wow-delay="0.3s"></div>
+    </div>
+    <div class="row">
+      <!-- Services item -->
+      <div class="col-md-4 col-lg-6 col-xs-12">
+        <div class="services-item wow fadeInRight" data-wow-delay="0.3s">
+            <img class="img-fluid" src="assets/img/searchbox.svg" alt="" width="100" height="100">
+          <div class="services-content ">
+            <h3><a [routerLink]="['/window']" routerLinkActive="router-link-active" >Start by searching for what you need</a></h3>
+            <p>Just type the skill required for the job in the search box, and off you go. </p>
+          </div>
+        </div>
+      </div>
+      <!-- Services item -->
+      <div class="col-md-4 col-lg-6 col-xs-12">
+        <div class="services-item wow fadeInRight" data-wow-delay="0.6s">
+          <img class="img-fluid" src="assets/img/cell_phone.svg" alt="" width="100" height="100">
+          <div class="services-content">
+            <h3><a [routerLink]="['/contact']">Contact via Phone, SMS, or Email</a></h3>
+            <p>Call the selected individual or send them a message to start the conversation. </p>
+          </div>
+        </div>
+      </div>
+ 
+      <!-- Services item -->
+      <div class="col-md-4 col-lg-6 col-xs-12">
+        <div class="services-item wow fadeInRight" data-wow-delay="1.2s">
+              <img class="img-fluid" src="assets/img/inspection.svg" alt="" width="100" height="100">
+            
+              <div class="services-content">
+                <h3><a href="#">Choose from a list of available workers</a></h3>
+                <p>Browse through workers profiles and select ones best suited for the job. </p>
+              </div>
+            </div>
+          </div>
+      <!-- Services item -->
+      <div class="col-md-4 col-lg-6 col-xs-12">
+        <div class="services-item wow fadeInRight" data-wow-delay="1.5s">
+          <img class="img-fluid" src="assets/img/user_male.svg" alt="" width="100" height="100">
+          <div class="services-content">
+            <h3><a [routerLink]="['/signup']" >And finally, become a worker yourself!</a></h3>
+            <p>Do you have some skills? Let others know what you can do, and charge for them. </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+ </section>
+ <!-- Services Section End -->
+ </section>
+ <!-- middle section End -->
+ <!-- profiles section start -->
+ <section>
+   <section id="pricing" class="section-padding">
+    <div class="container">
+      <div class="section-header text-center">          
+        <h2 class="section-title wow fadeInDown" data-wow-delay="0.3s">Newest profiles</h2>
+        <div class="shape wow fadeInDown" data-wow-delay="0.3s"></div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-8 col-xs-12">
+          <div class="table wow fadeInLeft" data-wow-delay="1.2s">
+            
+            <!-- we will add custom image here from data base-->
+            <img class="img-fluid" src="assets/img/searchbox.svg" alt="" width="100" height="100">
+            <div class="pricing-header">
+              <p class="price-value">{{recentUserPrice01}}</p>
+            </div>
+            <div class="title">
+            <h3>{{recentUserSkill01}}</h3>
+            </div>
+            <ul class="description">
+              <li>{{  recentUser && recentUser[0]?.firstName }} {{  recentUser && recentUser[0]?.lastName }} </li>
+              <li>{{  recentUserLocation01 }}</li>
+              <li>{{  recentUser && recentUser[0]?.email }}</li>
+              <li>{{  recentUser && recentUser[0]?.cellNo }}</li>
+            </ul>
+           
+            <button class="btn btn-common" [routerLink]="['/profile', recentUserID01]" routerLinkActive="router-link-active">Profile</button>
+          </div> 
+        </div>
+        <div class="col-lg-4 col-md-6 col-xs-12 active">
+          <div class="table wow fadeInUp" id="active-tb" data-wow-delay="1.2s">
+            <img class="img-fluid" src="assets/img/searchbox.svg" alt="" width="100" height="100">
+            <div class="pricing-header">
+              <p class="price-value">{{recentUserPrice02}}</p>
+            </div>
+            <div class="title">
+              <h3>{{recentUserSkill02}}</h3>
+            </div>
+            <ul class="description">
+                <li>{{  recentUser && recentUser[1]?.firstName }} {{  recentUser && recentUser[1]?.lastName }} </li>
+                <li>{{  recentUserLocation02 }}</li>
+                <li>{{  recentUser && recentUser[1]?.email }}</li>
+                <li>{{  recentUser && recentUser[1]?.cellNo }}</li>
+            </ul>
+            <button class="btn btn-common" [routerLink]="['/profile', recentUserID02]" routerLinkActive="router-link-active">Profile</button>
+         </div> 
+        </div>
+        <div class="col-lg-4 col-md-6 col-xs-12">
+          <div class="table wow fadeInRight" data-wow-delay="1.2s">
+            <img class="img-fluid" src="assets/img/searchbox.svg" alt="" width="100" height="100">
+            <div class="pricing-header">
+              <p class="price-value">{{recentUserPrice03}}</p>
+            </div>
+            <div class="title">
+              <h3>{{  recentUserSkill03 }} </h3>
+            </div>
+            <ul class="description">
+                <li>{{  recentUser && recentUser[2]?.firstName }} {{  recentUser && recentUser[2]?.lastName }} </li>
+                <li>{{  recentUserLocation03 }}</li>
+                <li>{{  recentUser && recentUser[2]?.email }}</li>
+                <li>{{  recentUser && recentUser[2]?.cellNo }}</li>
+            </ul>
+            <button class="btn btn-common" [routerLink]="['/profile', recentUserID03]" routerLinkActive="router-link-active" >Profile</button>
+         </div> 
+        </div>
+      </div>
+    </div>
+  </section>
+ </section>
+ 
+  <!-- profiles section end -->
+  

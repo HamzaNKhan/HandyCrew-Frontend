@@ -1,0 +1,65 @@
+<br><br><br><br><br><br>
+
+ <!-- AUTO COMPLETE SEARCHBOX -->
+ <div class="ng-autocomplete mt-5 ml-5" >
+    <ng-autocomplete 
+    [data]="skillSearch" 
+    [searchKeyword]="keyword" 
+    (selected)='selectEvent($event)'
+    (inputChanged)='onChangeSearch($event)' 
+    (inputFocused)='onFocused($event)' 
+    [itemTemplate]="itemTemplate"
+    [notFoundTemplate]="notFoundTemplate"
+    placeHolder= "Search Skills">
+    </ng-autocomplete>
+
+    <ng-template #itemTemplate let-item >
+        <a [innerHTML]="item.skillName" [routerLink]="['/window', item._id]"
+        routerLinkActive="router-link-active"
+        ></a>
+    </ng-template>
+
+    <ng-template #notFoundTemplate let-notFound>
+        <div [innerHTML]="notFound"></div>
+    </ng-template>
+</div>
+<!-- \\\\\\\\\\\ -->
+
+<div class="container-fluid col-11 badge-light mt-5">
+
+  <div class="row d-flex justify-content-around">
+    
+    <section id="pricing" class="section-padding col-4 ml-3 " *ngFor="let u of user">
+      <div class="container center " >
+        <div class="section-header text-center">          
+        </div>
+        <div class="row " >
+          
+          <div class="table wow fadeInLeft bg-white" data-wow-delay="1.2s">
+            
+            
+            <img class="img-fluid " src="assets/img/searchbox.svg" alt="" width="100" height="100">
+            <div class="pricing-header pt-3">
+              <p class="price-value">{{u.charges}}</p>
+            </div>
+            <div class="title">
+              <h3>{{ u.skillName }}</h3>
+            </div>
+            <ul class="description">
+              <li>{{u.firstName}} {{u.lastName}}</li>
+              <li>{{u.cityName}}</li>
+              <li>{{u.cellNo}}</li>
+              <li>{{u.email}}</li>
+            </ul>
+            
+            <button [routerLink]="['/profile', u.ID]" routerLinkActive="router-link-active"  class="btn btn-common">Profile</button>
+          </div> 
+        </div>
+        
+          
+      </div>
+      
+    </section>
+    
+  </div>
+</div>

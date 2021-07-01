@@ -1,0 +1,56 @@
+<br>
+<br>
+<section style="background-color: gray;">
+    <div id="cover-caption">
+      <div class="container">
+          <div class="row">
+            <div class="col-md-2"></div>
+              <div class="col-md-8 mt-5">
+                  
+                  </div>
+                  </div>
+                  </div>
+                  </div>
+  </section> 
+  <section class="hero is-primary is-bold">
+    <div class="hero-body">
+      <div class="container">
+        <div class="col-md-8 mt-5"></div>
+        <h1 class="title"> Contact us!</h1>
+      </div>
+      </div>
+    </section>
+  <section class="section">
+    <div class="container">
+  
+  
+        <form [formGroup]="angForm" >
+    
+            <div>
+              <label for="name">
+                Name
+              </label>
+              <input type="text" id="name" class="form-control" formControlName="name" #name> 
+            </div>
+            
+            <div>
+              <label for="email">
+                Email
+              </label>
+              <input type="email" id="email" class="form-control" formControlName="email" #email>
+            </div>
+            
+            <div>
+              <label for="message">
+                Message
+              </label>
+              <textarea type="text" id="message" class="textarea" class="form-control"  formControlName="message" #message></textarea>
+            </div>
+            
+            <button [routerLink]="['/contact']" routerLinkActive="router-link-active"  class="btn btn-primary" type="submit" (click)="onSubmit(name.value, email.value, message.value)"> Submit</button>
+          </form>
+    </div>
+  
+  </section> 
+  <br>
+  <br>

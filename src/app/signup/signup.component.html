@@ -1,0 +1,81 @@
+<br><br><br><br><br><br>
+<body>
+
+    <form [formGroup]="angForm">
+    
+      <h1>Sign Up as a Worker on HandyMan</h1>
+      
+
+        <legend><span class="number">1</span>BASIC INFORMATION</legend>
+
+        <label for="name">First Name:</label>
+        <input type="text" id="firstName" class="form-control" formControlName="firstName" #firstName>
+
+        <label for="name">Last Name:</label>
+        <input type="text" id="lastName" class="form-control" formControlName="lastName" #lastName>
+
+        
+        <label for="mail">Email:</label>
+        <input type="email" id="email" class="form-control" formControlName="email" #email>
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" class="form-control" formControlName="password" #password>
+    
+        <label for="number">Phone Number:</label>
+        <input type="text" id="cellNo" class="form-control" formControlName="cellNo" #cellNo>
+    
+        <label for="birthday">Date of Birth:</label>
+        <input type="date" id="dob" class="form-control" formControlName="dob" #dob>
+        
+        <label>Gender:</label>
+        <select  id="gender" #gender>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+        </select>
+        <br><br>
+        
+        <label for="city">City of Residence:</label>
+        <SELECT id="City" #City>
+          <OPTION  *ngFor="let c of city"  >{{c.cityName}}</OPTION>
+        </SELECT>
+    
+        
+        <!-- <label for="picture">Photograph:</label>
+        <form action="upload.php" method="post" enctype="multipart/form-data">
+            <input type="file"  (change)="onFileSelected($event)" name="fileToUpload" id="fileToUpload">
+            <input type="submit" value="Upload Photo" name="submit"> 
+        </form> -->
+  
+   <legend><span class="number">2</span>WORKER PROFILE</legend>
+
+   <label for="job">Your Job Role/Skill:</label>
+   <select id="skills" #skills>   
+       <OPTION *ngFor="let s of skill">{{ s.skillName }}</OPTION>
+       
+   </select>
+    
+   <label for="summary">Skill description:</label>
+   <textarea id="summary" placeholder="Enter description of your skill" class="form-control" formControlName="skillDescription" #summary></textarea>
+   
+      <!-- <label for="video">Video pitch</label>
+      <form action="upload.php" method="post" enctype="multipart/form-data">
+        <input type="file" name="fileToUpload" id="fileToUpload">
+    </form> -->
+    
+    <label for="rate">Rate:</label> 
+    <select id="rate" #rate>
+        <option Value=" Per Hour">Per hour</option>
+        <option Value=" Per Day">Per day</option>
+        <option Value=" per Week">Per week</option>
+        <option Value=" Per Month">Per month</option>
+        <option Value=" Per Job">Per job</option>
+    </select>
+    <input id="charges" placeholder="Amount entered should be 5-digit or lesser." class="form-control" formControlName="skillDescription" type="text" #charges/> 
+    
+    <button   type="submit" [routerLink]="['/home']" routerLinkActive="router-link-active"  (click)="onSignUP(firstName.value, lastName.value, email.value, cellNo.value, password.value, gender.value, dob.value, City.value, skills.value, summary.value, charges.value + rate.value)">Sign Up</button>
+</form>
+    
+    </body>
+    
+    
